@@ -1,7 +1,16 @@
 {
-  "generated": "2026-07-23T22:37:48Z",
-  "reportCount": 6,
+  "generated": "2026-07-23T23:24:53Z",
+  "reportCount": 7,
   "reports": [
+    {
+      "slug": "how-to-create-my-own-front-end-user-interface-for-vibe-coding",
+      "title": "Custom front-end UI for vibe coding",
+      "topic": "how to create my own front-end user interface for vibe coding",
+      "date": "2026-07-24",
+      "status": "full",
+      "summary": "Builders are mostly forking or self-hosting CloudCLI (siteboon/claudecodeui) rather than inventing a vibe-coding shell from zero. DIY paths converge on spawn-CLI + WebSocket + React, while smaller wins include custom Claude Code status lines and design-token rules so agent-built UI does not look like AI slop.",
+      "image": "assets/how-to-create-my-own-front-end-user-interface-for-vibe-coding.png"
+    },
     {
       "slug": "essential-github-repositories-for-vibe-coding",
       "title": "Essential GitHub repos for vibe coding",

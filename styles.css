@@ -8,8 +8,8 @@
   --line: rgba(13, 11, 8, 0.14);
   --line-strong: rgba(31, 143, 118, 0.45);
   --text: #0d0b08;
-  --text-dim: #3f3b36;
-  --text-mute: #5c574f;
+  --text-dim: #2e2b27;
+  --text-mute: #4a463f;
   --teal: #0f766e;
   --teal-deep: #0b5f58;
   --teal-glow: rgba(15, 118, 110, 0.12);
@@ -368,7 +368,7 @@ a:hover {
   gap: 0.4rem;
   font-size: 0.82rem;
   font-weight: 500;
-  color: var(--text-dim);
+  color: var(--text);
   text-decoration: none;
   margin-bottom: 1.25rem;
   transition: color 0.15s;
@@ -427,7 +427,7 @@ a:hover {
 
 .report-lede {
   margin: 0;
-  color: var(--text-dim);
+  color: var(--text);
   font-size: 1.02rem;
   max-width: 42rem;
 }

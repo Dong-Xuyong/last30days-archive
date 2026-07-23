@@ -1,0 +1,60 @@
+{
+  "generated": "2026-07-23T22:37:48Z",
+  "reportCount": 6,
+  "reports": [
+    {
+      "slug": "essential-github-repositories-for-vibe-coding",
+      "title": "Essential GitHub repos for vibe coding",
+      "topic": "essential GitHub repositories for vibe coding",
+      "date": "2026-07-23",
+      "status": "provisional",
+      "summary": "Provisional: Claude Code skills lists, awesome-cursorrules, easy-vibe, and anthropics/claude-code dominate the repo discourse.",
+      "image": "assets/essential-github-repositories-for-vibe-coding.png"
+    },
+    {
+      "slug": "gym-app-frontend-design-github-template",
+      "title": "Gym app frontend templates on GitHub",
+      "topic": "gym app frontend design github template",
+      "date": "2026-07-23",
+      "status": "provisional",
+      "summary": "Provisional: small DemoGym/FitForge/spottr repos plus FitPulse-style landing templates and Hevy-class UX signals.",
+      "image": "assets/gym-app-frontend-design-github-template.png"
+    },
+    {
+      "slug": "vibe-coding-community",
+      "title": "Where the vibe coding community hangs out",
+      "topic": "vibe coding community",
+      "date": "2026-07-23",
+      "status": "provisional",
+      "summary": "Provisional: awesome-list hubs, r/vibecoding showcases, and trap/cost debates define the community mood.",
+      "image": "assets/vibe-coding-community.png"
+    },
+    {
+      "slug": "vibe-coding-project-structure-file-organization",
+      "title": "How to organize files for vibe coding",
+      "topic": "vibe coding project structure file organization",
+      "date": "2026-07-23",
+      "status": "full",
+      "summary": "Feature-first folders, AGENTS.md/CLAUDE.md memory layer, and flat paths for AI-assisted coding.",
+      "image": "assets/vibe-coding-project-structure-file-organization.png"
+    },
+    {
+      "slug": "vibe-coding-skills",
+      "title": "Skills that make vibe coding work",
+      "topic": "vibe coding skills",
+      "date": "2026-07-23",
+      "status": "provisional",
+      "summary": "Provisional: fundamentals courses, trap warnings, and year-long builder retrospectives define the skills conversation.",
+      "image": "assets/vibe-coding-skills.png"
+    },
+    {
+      "slug": "weighted-pull-up-program",
+      "title": "How to program weighted pull-ups",
+      "topic": "weighted pull up program",
+      "date": "2026-07-23",
+      "status": "provisional",
+      "summary": "Provisional: heavy PRs (200lb / 50kg), 5x5 climbing programs, and warm-up/progression advice dominate the feed.",
+      "image": "assets/weighted-pull-up-program.png"
+    }
+  ]
+}

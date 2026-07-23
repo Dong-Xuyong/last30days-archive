@@ -1,0 +1,19 @@
+{
+  "slug": "essential-github-repositories-for-vibe-coding",
+  "title": "Essential GitHub repos for vibe coding",
+  "topic": "essential GitHub repositories for vibe coding",
+  "date": "2026-07-23",
+  "status": "provisional",
+  "summary": "Provisional: Claude Code skills lists, awesome-cursorrules, easy-vibe, and anthropics/claude-code dominate the repo discourse.",
+  "image": "assets/essential-github-repositories-for-vibe-coding.png",
+  "synthesisHtml": "<p>🌐 last30days v3.8.2 · synced 2026-07-23 · provisional</p>\n<p>What I learned (from Ranked Evidence Clusters - full synthesis pending):</p>\n<p><strong>Skill and rules repos are the hot shelf.</strong> Cluster titles point at YouTube roundups like \"6 Claude Code GitHub Repos That Change Everything\" and \"7 Agent Skills Every Vibe Coder Needs,\" plus star-heavy catalogs: ComposioHQ/awesome-claude-skills, PatrickJS/awesome-cursorrules, datawhalechina/easy-vibe, and anthropics/claude-code itself.</p>\n<p><strong>\"Awesome vibe coding\" lists keep multiplying.</strong> Resolved entities already name datawhalechina/easy-vibe, roboco-io/awesome-vibecoding, and adriannoes/awesome-vibe-coding - discovery is still list-driven, not single-canonical.</p>\n<p><strong>Tool vendors shape what gets starred.</strong> Cursor Router / Auto mode posts and Claude cost-per-commit claims sit beside beginner GitHub tutorials - the \"essential repos\" conversation mixes agent tooling with plain Git literacy.</p>\n<p>KEY PATTERNS:</p>\n<ol>\n<li><strong>Start with skills + rules catalogs</strong> - awesome-claude-skills and awesome-cursorrules show up before app templates.</li>\n<li><strong>Curriculum repos matter</strong> - easy-vibe-style learning trees get treated as essential, not optional.</li>\n<li><strong>Official tool repos still win attention</strong> - anthropics/claude-code anchors the graph.</li>\n<li><strong>Roundup videos drive adoption</strong> - YouTube \"N repos\" formats set the weekly shortlist.</li>\n</ol>",
+  "keyPatterns": [
+    "**Start with skills + rules catalogs** - awesome-claude-skills and awesome-cursorrules show up before app templates.",
+    "**Curriculum repos matter** - easy-vibe-style learning trees get treated as essential, not optional.",
+    "**Official tool repos still win attention** - anthropics/claude-code anchors the graph.",
+    "**Roundup videos drive adoption** - YouTube \"N repos\" formats set the weekly shortlist."
+  ],
+  "footerHtml": "",
+  "badge": "🌐 last30days v3.8.2 · synced 2026-07-23",
+  "source_raw": "C:\\Users\\Dong\\Documents\\Last30Days\\essential-github-repositories-for-vibe-coding-raw-v3.md"
+}

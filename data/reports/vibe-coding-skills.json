@@ -1,0 +1,19 @@
+{
+  "slug": "vibe-coding-skills",
+  "title": "Skills that make vibe coding work",
+  "topic": "vibe coding skills",
+  "date": "2026-07-23",
+  "status": "provisional",
+  "summary": "Provisional: fundamentals courses, trap warnings, and year-long builder retrospectives define the skills conversation.",
+  "image": "assets/vibe-coding-skills.png",
+  "synthesisHtml": "<p>🌐 last30days v3.8.2 · synced 2026-07-23 · provisional</p>\n<p>What I learned (from Ranked Evidence Clusters - full synthesis pending):</p>\n<p><strong>Fundamentals still lead the skills feed.</strong> Top clusters include Tina Huang's \"Vibe Coding Fundamentals,\" long Gemini/Antigravity courses, Claude's official AI courses, and Anthropic's free engineer masterclass - people want structured skill paths, not vibes alone.</p>\n<p><strong>The counter-skill is knowing the trap.</strong> HN/YouTube titles like \"The Vibe Coding Trap,\" \"Vibe Coding is a Trap (What Senior Devs See),\" and \"Who cleans up after the vibe-coding party?\" sit next to showcase posts - judgment and cleanup are framed as skills.</p>\n<p><strong>Practitioners publish year-one retrospectives.</strong> Reddit clusters (\"I have been vibe coding for more than a year,\" \"when my opinion of vibe coding changed,\" \"How to make vibe coding not suck\") treat taste, scope control, and professional AI use as the real skill stack. pinkycollie/awesome-vibe-coding and mattpocock/skills show up as GitHub anchors.</p>\n<p>KEY PATTERNS:</p>\n<ol>\n<li><strong>Learn fundamentals before speed</strong> - courses and ABCs posts still outrank pure demos.</li>\n<li><strong>Trap-awareness is a skill</strong> - failure-mode content is part of the curriculum.</li>\n<li><strong>Retrospectives beat tips</strong> - multi-project builders set the bar for \"what actually works.\"</li>\n<li><strong>Skills packs are becoming portable</strong> - awesome lists and mattpocock/skills-style repos package reusable agent skills.</li>\n</ol>",
+  "keyPatterns": [
+    "**Learn fundamentals before speed** - courses and ABCs posts still outrank pure demos.",
+    "**Trap-awareness is a skill** - failure-mode content is part of the curriculum.",
+    "**Retrospectives beat tips** - multi-project builders set the bar for \"what actually works.\"",
+    "**Skills packs are becoming portable** - awesome lists and mattpocock/skills-style repos package reusable agent skills."
+  ],
+  "footerHtml": "",
+  "badge": "🌐 last30days v3.8.2 · synced 2026-07-23",
+  "source_raw": "C:\\Users\\Dong\\Documents\\Last30Days\\vibe-coding-skills-raw-v3.md"
+}

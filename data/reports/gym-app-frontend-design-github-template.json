@@ -1,0 +1,19 @@
+{
+  "slug": "gym-app-frontend-design-github-template",
+  "title": "Gym app frontend templates on GitHub",
+  "topic": "gym app frontend design github template",
+  "date": "2026-07-23",
+  "status": "provisional",
+  "summary": "Provisional: small DemoGym/FitForge/spottr repos plus FitPulse-style landing templates and Hevy-class UX signals.",
+  "image": "assets/gym-app-frontend-design-github-template.png",
+  "synthesisHtml": "<p>🌐 last30days v3.8.2 · synced 2026-07-23 · provisional</p>\n<p>What I learned (from Ranked Evidence Clusters - full synthesis pending):</p>\n<p><strong>Fresh gym frontends are tiny but concrete.</strong> Top GitHub clusters name finding-sahil/DemoGym, Muhammad-Ahmed-Developerr/Arm-Strong-Website, abdulrafayKhan-10/FitForge-App, ClaireAICodes/spottr, and abx15/Powerlift-Jym - starter repos more than mature design systems.</p>\n<p><strong>Landing-page templates outnumber full product UIs.</strong> YouTube/Reddit titles like FitPulse dark SaaS landing pages and Hostinger Horizons \"Gym Retention\" templates suggest builders often want a marketing shell first, then a workout log.</p>\n<p><strong>Product UX signals come from live apps, not templates.</strong> Hevy community redesign talk, LiftLogic set-logging pitches, and GymNut AI day-1-vs-day-7 posts point at the features templates should copy: streak-friendly logging, glanceable progress, trainer-ready flows.</p>\n<p>KEY PATTERNS:</p>\n<ol>\n<li><strong>Clone a thin demo, not a kitchen sink</strong> - low-star DemoGym/FitForge-style repos are the practical starters.</li>\n<li><strong>Dark SaaS landing + workout core</strong> - marketing template + logging UI is the common split.</li>\n<li><strong>Copy habit loops from Hevy-class apps</strong> - redesign and retention features matter more than pretty empty shells.</li>\n<li><strong>Log last weight / next set</strong> - LiftLogic-style memory is the UX users actually ask for.</li>\n</ol>",
+  "keyPatterns": [
+    "**Clone a thin demo, not a kitchen sink** - low-star DemoGym/FitForge-style repos are the practical starters.",
+    "**Dark SaaS landing + workout core** - marketing template + logging UI is the common split.",
+    "**Copy habit loops from Hevy-class apps** - redesign and retention features matter more than pretty empty shells.",
+    "**Log last weight / next set** - LiftLogic-style memory is the UX users actually ask for."
+  ],
+  "footerHtml": "",
+  "badge": "🌐 last30days v3.8.2 · synced 2026-07-23",
+  "source_raw": "C:\\Users\\Dong\\Documents\\Last30Days\\gym-app-frontend-design-github-template-raw-v3.md"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "vibe-coding-community",
+  "title": "Where the vibe coding community hangs out",
+  "topic": "vibe coding community",
+  "date": "2026-07-23",
+  "status": "provisional",
+  "summary": "Provisional: awesome-list hubs, r/vibecoding showcases, and trap/cost debates define the community mood.",
+  "image": "assets/vibe-coding-community.png",
+  "synthesisHtml": "<p>🌐 last30days v3.8.2 · synced 2026-07-23 · provisional</p>\n<p>What I learned (from Ranked Evidence Clusters - full synthesis pending):</p>\n<p><strong>Awesome lists are the community directory.</strong> filipecalegario/awesome-vibe-coding (~5K stars), roboco-io/awesome-vibecoding, and startvibecoding/mothx top the clusters - the \"community\" often organizes as curated link graphs before Discord-like hubs.</p>\n<p><strong>Showcases and skepticism share the same feed.</strong> Reddit hits include 100% vibe-coded game trailers, browser tools for Cursor/Claude prompts, Linus-is-vibe-coding memes, and \"vibe coding has a silent bill\" cost audits. HN adds \"The Vibe Coding Trap\" and Google agentic-engineering white paper debate.</p>\n<p><strong>New platforms keep trying to own the room.</strong> Clusters mention Buzz open communities, Delta's Ren platform, fleet-engineering evolution videos, and ARR livestreams - community identity is still fragmenting across tools and challenges.</p>\n<p>KEY PATTERNS:</p>\n<ol>\n<li><strong>Lists before forums</strong> - awesome-* repos are the durable meetup place.</li>\n<li><strong>Showcase + cleanup culture</strong> - pride posts and \"who pays the bill\" posts travel together.</li>\n<li><strong>Pros debate the label</strong> - \"do professional engineers vibe code?\" is a standing thread.</li>\n<li><strong>Tool-native micro-communities</strong> - Cursor/Claude/Buzz/Ren pockets form faster than one big tent.</li>\n</ol>",
+  "keyPatterns": [
+    "**Lists before forums** - awesome-* repos are the durable meetup place.",
+    "**Showcase + cleanup culture** - pride posts and \"who pays the bill\" posts travel together.",
+    "**Pros debate the label** - \"do professional engineers vibe code?\" is a standing thread.",
+    "**Tool-native micro-communities** - Cursor/Claude/Buzz/Ren pockets form faster than one big tent."
+  ],
+  "footerHtml": "",
+  "badge": "🌐 last30days v3.8.2 · synced 2026-07-23",
+  "source_raw": "C:\\Users\\Dong\\Documents\\Last30Days\\vibe-coding-community-raw-v3.md"
+}

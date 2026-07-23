@@ -1,27 +1,44 @@
 /* last30days archive — dong-ui tokens + teal accent */
 
-:root,
-html.dark {
-  --ink: hsl(var(--background));
-  --ink-2: hsl(var(--secondary));
-  --surface: hsl(var(--card));
-  --surface-2: hsl(var(--secondary));
-  --line: hsl(var(--border) / 0.7);
-  --line-strong: hsl(var(--primary) / 0.35);
-  --text: hsl(var(--foreground));
-  --text-dim: hsl(var(--muted-foreground));
-  --text-mute: hsl(var(--muted-foreground));
-  --teal: #3ecfad;
-  --teal-deep: #1f8f76;
-  --teal-glow: rgba(62, 207, 173, 0.12);
-  --amber: #d4a35c;
-  --danger-soft: #c97a6b;
+:root {
+  --ink: #f6f4ef;
+  --ink-2: #ebeae5;
+  --surface: #ffffff;
+  --surface-2: #f0eeea;
+  --line: rgba(13, 11, 8, 0.14);
+  --line-strong: rgba(31, 143, 118, 0.45);
+  --text: #0d0b08;
+  --text-dim: #3f3b36;
+  --text-mute: #5c574f;
+  --teal: #0f766e;
+  --teal-deep: #0b5f58;
+  --teal-glow: rgba(15, 118, 110, 0.12);
+  --amber: #9a6b00;
+  --danger-soft: #a13d30;
   --radius: 0.5rem;
-  --shadow: 0 18px 50px hsl(0 0% 0% / 0.2);
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.1);
   --font-display: var(--font-sans);
   --font-body: var(--font-sans);
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --max: 920px;
+}
+
+html.dark {
+  --ink: #141414;
+  --ink-2: #1f1f1f;
+  --surface: #1f1f1f;
+  --surface-2: #2b2b2b;
+  --line: rgba(239, 238, 236, 0.14);
+  --line-strong: rgba(62, 207, 173, 0.4);
+  --text: #efeeec;
+  --text-dim: #d0cec9;
+  --text-mute: #b0aea8;
+  --teal: #3ecfad;
+  --teal-deep: #5ee0c0;
+  --teal-glow: rgba(62, 207, 173, 0.14);
+  --amber: #d4a35c;
+  --danger-soft: #e08a7a;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
 }
 
 *,
@@ -74,11 +91,7 @@ a {
 }
 
 a:hover {
-  color: #7eebd0;
-}
-
-html:not(.dark) a:hover {
-  color: #1f8f76;
+  color: var(--teal-deep);
 }
 
 /* Header */
@@ -461,14 +474,14 @@ html:not(.dark) a:hover {
 
 .synthesis-body p {
   margin: 0 0 0.9rem;
-  color: var(--text-dim);
+  color: var(--text);
 }
 
 .synthesis-body ul,
 .synthesis-body ol {
   margin: 0 0 1rem;
   padding-left: 1.25rem;
-  color: var(--text-dim);
+  color: var(--text);
 }
 
 .synthesis-body li {
@@ -518,7 +531,7 @@ html:not(.dark) a:hover {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
-  color: var(--text-dim);
+  color: var(--text);
   font-size: 0.92rem;
 }
 

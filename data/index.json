@@ -1,7 +1,16 @@
 {
-  "generated": "2026-07-23T23:52:46Z",
-  "reportCount": 7,
+  "generated": "2026-07-29T18:40:25Z",
+  "reportCount": 8,
   "reports": [
+    {
+      "slug": "best-powerlifting-program-for-barbell-squats",
+      "title": "Best powerlifting squat programs",
+      "topic": "best powerlifting program for barbell squats",
+      "date": "2026-07-29",
+      "status": "full",
+      "summary": "Community consensus picks programs by experience level: GZCLP for beginner-to-intermediate barbell squat progression, Calgary Barbell for meet-style peaking, and Russian Squat / Nuckols templates for squat specialization. Smolov stays the high-risk overreach option.",
+      "image": "assets/best-powerlifting-program-for-barbell-squats.png"
+    },
     {
       "slug": "how-to-create-my-own-front-end-user-interface-for-vibe-coding",
       "title": "Custom front-end UI for vibe coding",

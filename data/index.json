@@ -1,7 +1,16 @@
 {
-  "generated": "2026-07-29T18:40:25Z",
-  "reportCount": 8,
+  "generated": "2026-07-30T08:28:36Z",
+  "reportCount": 9,
   "reports": [
+    {
+      "slug": "how-to-search-for-papers-for-thesis",
+      "title": "How to Search for Papers for Thesis",
+      "topic": "How to search for papers for thesis",
+      "date": "2026-07-30",
+      "status": "full",
+      "summary": "Community guidance this month favors a layered search stack: Google Scholar or Semantic Scholar for entry, discipline databases for rigor, citation maps (ResearchRabbit/Litmaps) from seed papers, Elicit for structured extraction, and Zotero for organization. AI tools speed discovery but every claim still needs PDF verification; volume without notes is the most-cited failure mode.",
+      "image": "assets/how-to-search-for-papers-for-thesis.png"
+    },
     {
       "slug": "best-powerlifting-program-for-barbell-squats",
       "title": "Best powerlifting squat programs",

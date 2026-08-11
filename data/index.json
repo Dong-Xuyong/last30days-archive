@@ -1,7 +1,16 @@
 {
-  "generated": "2026-08-11T12:12:57Z",
-  "reportCount": 11,
+  "generated": "2026-08-11T13:15:13Z",
+  "reportCount": 12,
   "reports": [
+    {
+      "slug": "best-price-value-xiaomi-phone",
+      "title": "Best price-value Xiaomi phones",
+      "topic": "best price value xiaomi phone",
+      "date": "2026-08-11",
+      "status": "full",
+      "summary": "Community and review consensus puts Xiaomi's best bang-for-buck in the midrange: POCO X7 Pro for performance, Redmi Note 15 Pro / Pro+ for balanced daily use, and POCO M8 Pro for cheaper value. August's Redmi Note 17 / Redmi 17 launches win on huge batteries but trade away all-rounder value.",
+      "image": "assets/best-price-value-xiaomi-phone.png"
+    },
     {
       "slug": "price-quality-watches-for-a-men-at-cheap-price-for-daily-use",
       "title": "Affordable men's daily watches",

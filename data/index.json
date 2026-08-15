@@ -1,7 +1,16 @@
 {
-  "generated": "2026-08-15T07:59:32Z",
-  "reportCount": 14,
+  "generated": "2026-08-15T08:01:02Z",
+  "reportCount": 15,
   "reports": [
+    {
+      "slug": "apps-to-install-before-going-to-china",
+      "title": "Apps to install before going to China",
+      "topic": "app to install before to going to china",
+      "date": "2026-08-15",
+      "status": "full",
+      "summary": "Travelers this month recommend a small stack, not a 12-app list: Alipay first, an HK/SG-routed eSIM instead of VPN-as-primary, WeChat as backup pay and chat, Amap or Apple Maps, and Trip.com for English bookings. DiDi, metro QR, and bikes live as Alipay mini-programs.",
+      "image": "assets/apps-to-install-before-going-to-china.png"
+    },
     {
       "slug": "vpn-to-download-in-china",
       "title": "VPN to download in China",

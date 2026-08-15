@@ -1,7 +1,16 @@
 {
-  "generated": "2026-08-11T15:48:35Z",
-  "reportCount": 13,
+  "generated": "2026-08-15T07:59:32Z",
+  "reportCount": 14,
   "reports": [
+    {
+      "slug": "vpn-to-download-in-china",
+      "title": "VPN to download in China",
+      "topic": "vpn to download in china",
+      "date": "2026-08-15",
+      "status": "full",
+      "summary": "Travelers still say install a VPN before landing because China app stores and provider sites are blocked. The 30-day shift is eSIM-first, with Astrill as the practitioner VPN pick, ExpressVPN as the first-trip download, and LetsVPN treated as the failed default.",
+      "image": "assets/vpn-to-download-in-china.png"
+    },
     {
       "slug": "best-chains-for-a-men-with-good-price-quality-on-inditex",
       "title": "Best Inditex men's chains for price/quality",

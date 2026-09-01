@@ -1,7 +1,16 @@
 {
-  "generated": "2026-08-15T08:01:02Z",
-  "reportCount": 15,
+  "generated": "2026-09-01T09:27:30Z",
+  "reportCount": 16,
   "reports": [
+    {
+      "slug": "aima-missed-first-appointment-pending-residence-title",
+      "title": "AIMA missed summons, still pending",
+      "topic": "what should I do still pending and missing the first call for the new title of residence for almost a year",
+      "date": "2026-09-01",
+      "status": "full",
+      "summary": "People waiting on AIMA after a missed first summons say do not email daily. Use the contact form, then geral@aima.gov.pt once. Check spam for @aima.gov.pt and give employers the QR comprovativo while the file stays under review.",
+      "image": "assets/aima-missed-first-appointment-pending-residence-title.png"
+    },
     {
       "slug": "apps-to-install-before-going-to-china",
       "title": "Apps to install before going to China",

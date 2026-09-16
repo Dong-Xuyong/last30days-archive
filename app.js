@@ -48,11 +48,17 @@
     return catalogCache;
   }
 
+  function setDetailMode(on) {
+    root.classList.toggle("is-detail", Boolean(on));
+  }
+
   function setLoading(msg) {
+    setDetailMode(false);
     root.innerHTML = `<div class="state-panel">${escapeHtml(msg || "Loading…")}</div>`;
   }
 
   function setError(msg) {
+    setDetailMode(false);
     root.innerHTML = `<div class="state-panel error">${escapeHtml(msg)}</div>`;
   }
 
@@ -102,13 +108,39 @@
       String(b.date || "").localeCompare(String(a.date || ""))
     );
 
+    const fullCount = reports.filter((r) => String(r.status || "full").toLowerCase() !== "provisional").length;
+    const provisionalCount = reports.length - fullCount;
+    const updated = catalog.generated ? formatDate(catalog.generated) : "—";
+
+    const hero = `
+      <section class="learning-hero" aria-labelledby="learning-title">
+        <div class="hero-topline">
+          <span class="eyebrow">Last 30 days</span>
+          <span class="hero-xp">Updated ${escapeHtml(updated)}</span>
+        </div>
+        <h2 id="learning-title">Research archive</h2>
+        <p>What people actually said in the last 30 days — distilled into durable reports.</p>
+        <div class="status-stats">
+          <div>
+            <strong>${reports.length}</strong>
+            <span>Reports</span>
+          </div>
+          <div>
+            <strong>${fullCount}</strong>
+            <span>Full</span>
+          </div>
+          <div>
+            <strong>${provisionalCount}</strong>
+            <span>Provisional</span>
+          </div>
+        </div>
+      </section>`;
+
     if (reports.length === 0) {
+      setDetailMode(false);
       root.innerHTML = `
-        <section class="catalog-hero">
-          <h1>Research archive</h1>
-          <p>Synthesized last30days reports — searchable, linkable, and ready for GitHub Pages.</p>
-        </section>
-        <div class="empty-archive">
+        ${hero}
+        <div class="empty-archive empty-state">
           <h2>No reports yet</h2>
           <p>Run <code>python scripts/sync_last30days_archive.py</code> to populate this archive.</p>
         </div>
@@ -117,45 +149,57 @@
     }
 
     const cards = sorted
-      .map((r, i) => {
-        const delay = Math.min(i * 0.03, 0.35);
+      .map((r) => {
+        const thumb = r.image
+          ? `<img class="video-card-thumb" src="${escapeHtml(r.image)}" alt="" loading="lazy" />`
+          : `<div class="video-card-thumb video-card-thumb-empty" aria-hidden="true"></div>`;
         return `
         <li>
-          <a class="report-card" href="#/report/${encodeURIComponent(r.slug)}" style="animation-delay:${delay}s">
-            <div class="report-card-top">
-              <span class="report-card-meta">${escapeHtml(formatDate(r.date))}</span>
-              ${statusBadge(r.status)}
+          <a class="video-card report-card" href="#/report/${encodeURIComponent(r.slug)}">
+            <div class="video-card-top">
+              <div class="video-card-thumb-wrap">${thumb}</div>
+              <div class="video-card-body">
+                <p class="video-card-title">${escapeHtml(r.title || r.slug)}</p>
+                <div class="video-card-meta">
+                  <span>${escapeHtml(formatDate(r.date))}</span>
+                  ${r.topic ? `<span>${escapeHtml(r.topic)}</span>` : ""}
+                </div>
+                <div class="video-card-labels">
+                  ${statusBadge(r.status)}
+                </div>
+              </div>
             </div>
-            <h2>${escapeHtml(r.title || r.slug)}</h2>
-            ${r.topic ? `<p class="topic">${escapeHtml(r.topic)}</p>` : ""}
             ${r.summary ? `<p class="summary">${escapeHtml(r.summary)}</p>` : ""}
           </a>
         </li>`;
       })
       .join("");
 
+    setDetailMode(false);
     root.innerHTML = `
-      <section class="catalog-hero">
-        <h1>Research archive</h1>
-        <p>What people actually said in the last 30 days — distilled into durable reports.</p>
+      ${hero}
+      <section class="home-section">
+        <div class="section-heading">
+          <h2>Reports</h2>
+        </div>
+        <div class="search-row">
+          <input
+            type="search"
+            class="search-input"
+            id="catalog-search"
+            placeholder="Search title, topic, summary…"
+            value="${escapeHtml(query || "")}"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <span class="filter-chip" id="result-count">${sorted.length} / ${reports.length}</span>
+        </div>
+        ${
+          sorted.length === 0
+            ? `<p class="no-results">No reports match “${escapeHtml(query)}”.</p>`
+            : `<ul class="video-grid report-list">${cards}</ul>`
+        }
       </section>
-      <div class="search-row">
-        <input
-          type="search"
-          class="search-input"
-          id="catalog-search"
-          placeholder="Search title, topic, summary…"
-          value="${escapeHtml(query || "")}"
-          autocomplete="off"
-          spellcheck="false"
-        />
-        <span class="filter-chip" id="result-count">${sorted.length} / ${reports.length}</span>
-      </div>
-      ${
-        sorted.length === 0
-          ? `<p class="no-results">No reports match “${escapeHtml(query)}”.</p>`
-          : `<ul class="report-list">${cards}</ul>`
-      }
     `;
 
     const input = document.getElementById("catalog-search");
@@ -189,6 +233,7 @@
       </section>`
         : "";
 
+    setDetailMode(true);
     root.innerHTML = `
       <a class="back-link" href="#/">← All reports</a>
       <article class="report-view">

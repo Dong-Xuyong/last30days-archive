@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-19T10:24:33Z",
-  "reportCount": 17,
+  "generated": "2026-09-19T12:37:44Z",
+  "reportCount": 18,
   "reports": [
     {
       "slug": "bilibili-transcript-extract",
@@ -10,6 +10,15 @@
       "status": "full",
       "summary": "Official Bilibili captions stay login-gated via SESSDATA and player/wbi/v2. GitHub tools (bilibili-cli, BiliSum, video-captions, yt-dlp) agree; public X talk this month is about subtitle quality, not the fetch API.",
       "image": "assets/bilibili-transcript-extract.png"
+    },
+    {
+      "slug": "how-to-optimize-the-token-usage",
+      "title": "Optimize LLM token usage",
+      "topic": "how to optimize the token usage?",
+      "date": "2026-09-19",
+      "status": "full",
+      "summary": "Communities say token bills are almost all reread context, not generated code. The harness startup tax times turn count sets the price more than the model, and the fastest cuts are compressing tool dumps, skipping agent loops on known files, and keeping a cache-stable prefix.",
+      "image": "assets/how-to-optimize-the-token-usage.png"
     },
     {
       "slug": "aima-missed-first-appointment-pending-residence-title",

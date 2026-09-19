@@ -1,7 +1,16 @@
 {
-  "generated": "2026-09-16T16:29:08Z",
-  "reportCount": 16,
+  "generated": "2026-09-19T10:24:33Z",
+  "reportCount": 17,
   "reports": [
+    {
+      "slug": "bilibili-transcript-extract",
+      "title": "Bilibili transcript extract",
+      "topic": "bilibili transcript extract",
+      "date": "2026-09-19",
+      "status": "full",
+      "summary": "Official Bilibili captions stay login-gated via SESSDATA and player/wbi/v2. GitHub tools (bilibili-cli, BiliSum, video-captions, yt-dlp) agree; public X talk this month is about subtitle quality, not the fetch API.",
+      "image": "assets/bilibili-transcript-extract.png"
+    },
     {
       "slug": "aima-missed-first-appointment-pending-residence-title",
       "title": "AIMA missed summons, still pending",

@@ -75,19 +75,8 @@
     return `<span class="badge ${label}">${escapeHtml(label)}</span>`;
   }
 
-  function formatDate(iso) {
-    if (!iso) return "";
-    const d = new Date(iso);
-    if (Number.isNaN(d.getTime())) return escapeHtml(iso);
-    return d.toLocaleDateString(undefined, {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
-  }
-
   function reportDay(iso) {
-    const match = /^(\d{4}-\d{2}-\d{2})/.exec(String(iso || ""));
+    const match = /^(\d{4}-\d{2}-\d{2})/.exec(String(iso || "").trim());
     return match ? match[1] : "";
   }
 
@@ -102,10 +91,21 @@
     });
   }
 
-  function localTodayISO(now = new Date()) {
-    const m = String(now.getMonth() + 1).padStart(2, "0");
-    const d = String(now.getDate()).padStart(2, "0");
-    return `${now.getFullYear()}-${m}-${d}`;
+  function formatDate(iso) {
+    if (!iso) return "";
+    const raw = String(iso).trim();
+    if (reportDay(raw) === raw) return formatDay(raw);
+    const d = new Date(raw);
+    if (Number.isNaN(d.getTime())) return escapeHtml(iso);
+    return d.toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  }
+
+  function utcTodayISO(now = new Date()) {
+    return now.toISOString().slice(0, 10);
   }
 
   function shiftISODate(iso, days) {
@@ -116,8 +116,14 @@
   }
 
   function recentWindow(now = new Date()) {
-    const today = localTodayISO(now);
+    const today = utcTodayISO(now);
     return { today, start: shiftISODate(today, -(RECENT_DAYS - 1)) };
+  }
+
+  function reportImageSrc(report) {
+    const image = report && report.image;
+    if (typeof image !== "string") return "";
+    return image.trim();
   }
 
   function inRecentWindow(date, win) {
@@ -179,8 +185,9 @@
   }
 
   function reportCardHtml(report) {
-    const thumb = report.image
-      ? `<img class="video-card-thumb" src="${escapeHtml(report.image)}" alt="" loading="lazy" />`
+    const src = reportImageSrc(report);
+    const thumb = src
+      ? `<img class="video-card-thumb" src="${escapeHtml(src)}" alt="" loading="lazy" />`
       : `<div class="video-card-thumb video-card-thumb-empty" aria-hidden="true"></div>`;
     return `
         <li>
@@ -348,7 +355,7 @@
           <span class="hero-xp">${escapeHtml(formatDay(win.start))} – ${escapeHtml(formatDay(win.today))}</span>
         </div>
         <h2 id="recent-title">Recent reports</h2>
-        <p>Reports dated in the last 13 days, through today on this device.</p>
+        <p>Reports whose date falls in the last 13 calendar days, through today (UTC).</p>
         <p class="window-note">Newest report: <strong>${escapeHtml(newestLabel)}</strong>. Index regenerated <strong>${escapeHtml(updated)}</strong>.</p>
         <div class="status-stats">
           <div>
@@ -418,8 +425,9 @@
   function renderReport(report) {
     headerMeta.textContent = report.badge || report.date || "";
 
-    const img = report.image
-      ? `<div class="report-hero-img-wrap"><img src="${escapeHtml(report.image)}" alt="${escapeHtml(report.title || report.slug)}" loading="eager" /></div>`
+    const src = reportImageSrc(report);
+    const img = src
+      ? `<div class="report-hero-img-wrap"><img src="${escapeHtml(src)}" alt="${escapeHtml(report.title || report.slug)}" loading="eager" /></div>`
       : "";
 
     const patterns = Array.isArray(report.keyPatterns) ? report.keyPatterns : [];

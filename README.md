@@ -8,7 +8,7 @@ Static GitHub Pages archive for [last30days](https://github.com/mvanhorn/last30d
 
 | Path | Role |
 | --- | --- |
-| `index.html` / `app.js` / `styles.css` | SPA shell (hash routes `#/` and `#/report/<slug>`) |
+| `index.html` / `app.js` / `styles.css` | SPA shell (hash routes `#/`, `#/recent`, and `#/report/<slug>`) |
 | `data/index.json` | Catalog index |
 | `data/reports/<slug>.json` | Full report payloads |
 | `assets/` | Hero images (`assets/<slug>.png`) |
@@ -28,7 +28,7 @@ python -m http.server 8080
 npx --yes serve -l 8080
 ```
 
-Open http://localhost:8080/ (or the URL your server prints). Use `#/` for the catalog and `#/report/<slug>` for a report.
+Open http://localhost:8080/ (or the URL your server prints). Use `#/` for the catalog, `#/recent` for the last 13 days, and `#/report/<slug>` for a report.
 
 ## Sync reports into the archive
 

@@ -1,16 +1,20 @@
 /**
  * last30days Archive — static SPA shell
- * Hash routes: #/  |  #/report/<slug>
+ * Hash routes: #/  |  #/recent  |  #/report/<slug>
  * Data: data/index.json, data/reports/<slug>.json
  */
 
 (function () {
   "use strict";
 
+  const RECENT_DAYS = 13;
+
   const root = document.getElementById("view-root");
   const headerMeta = document.getElementById("header-meta");
 
   let catalogCache = null;
+  let routeSeq = 0;
+  const bodyTextCache = new Map();
 
   function escapeHtml(str) {
     return String(str ?? "")
@@ -27,6 +31,9 @@
 
     if (parts.length === 0) {
       return { name: "home" };
+    }
+    if (parts.length === 1 && parts[0] === "recent") {
+      return { name: "recent" };
     }
     if (parts[0] === "report" && parts[1]) {
       return { name: "report", slug: decodeURIComponent(parts[1]) };
@@ -77,6 +84,123 @@
       month: "short",
       day: "numeric",
     });
+  }
+
+  function reportDay(iso) {
+    const match = /^(\d{4}-\d{2}-\d{2})/.exec(String(iso || ""));
+    return match ? match[1] : "";
+  }
+
+  function formatDay(iso) {
+    const day = reportDay(iso);
+    if (!day) return "";
+    const [y, m, d] = day.split("-").map(Number);
+    return new Date(y, m - 1, d).toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  }
+
+  function localTodayISO(now = new Date()) {
+    const m = String(now.getMonth() + 1).padStart(2, "0");
+    const d = String(now.getDate()).padStart(2, "0");
+    return `${now.getFullYear()}-${m}-${d}`;
+  }
+
+  function shiftISODate(iso, days) {
+    const [y, m, d] = iso.split("-").map(Number);
+    const dt = new Date(Date.UTC(y, m - 1, d));
+    dt.setUTCDate(dt.getUTCDate() + days);
+    return dt.toISOString().slice(0, 10);
+  }
+
+  function recentWindow(now = new Date()) {
+    const today = localTodayISO(now);
+    return { today, start: shiftISODate(today, -(RECENT_DAYS - 1)) };
+  }
+
+  function inRecentWindow(date, win) {
+    const day = reportDay(date);
+    return Boolean(day) && day >= win.start && day <= win.today;
+  }
+
+  function daysBetween(earlier, later) {
+    if (!earlier || !later) return null;
+    const [y1, m1, d1] = earlier.split("-").map(Number);
+    const [y2, m2, d2] = later.split("-").map(Number);
+    return Math.round((Date.UTC(y2, m2 - 1, d2) - Date.UTC(y1, m1 - 1, d1)) / 86400000);
+  }
+
+  function newestReportDate(reports) {
+    let newest = "";
+    for (const report of reports) {
+      const day = reportDay(report.date);
+      if (day && day > newest) newest = day;
+    }
+    return newest;
+  }
+
+  function htmlToText(html) {
+    if (!html) return "";
+    const doc = new DOMParser().parseFromString(String(html), "text/html");
+    return (doc.body.textContent || "").replace(/\s+/g, " ").trim();
+  }
+
+  async function loadBodyText(slug) {
+    if (bodyTextCache.has(slug)) return bodyTextCache.get(slug);
+    try {
+      const report = await fetchJson(`data/reports/${encodeURIComponent(slug)}.json`);
+      const patterns = Array.isArray(report.keyPatterns) ? report.keyPatterns : [];
+      const text = [htmlToText(report.synthesisHtml), ...patterns, htmlToText(report.footerHtml)]
+        .filter(Boolean)
+        .join(" ");
+      bodyTextCache.set(slug, text);
+      return text;
+    } catch (err) {
+      console.error(err);
+      bodyTextCache.set(slug, "");
+      return "";
+    }
+  }
+
+  function viewNav(active) {
+    const item = (name, href, label) => {
+      const current = name === active;
+      return `<a class="filter-chip${current ? " is-active" : ""}" href="${href}"${
+        current ? ' aria-current="page"' : ""
+      }>${label}</a>`;
+    };
+    return `<nav class="view-nav" aria-label="Archive views">${item("home", "#/", "All reports")}${item(
+      "recent",
+      "#/recent",
+      "Last 13 days"
+    )}</nav>`;
+  }
+
+  function reportCardHtml(report) {
+    const thumb = report.image
+      ? `<img class="video-card-thumb" src="${escapeHtml(report.image)}" alt="" loading="lazy" />`
+      : `<div class="video-card-thumb video-card-thumb-empty" aria-hidden="true"></div>`;
+    return `
+        <li>
+          <a class="video-card report-card" href="#/report/${encodeURIComponent(report.slug)}">
+            <div class="video-card-top">
+              <div class="video-card-thumb-wrap">${thumb}</div>
+              <div class="video-card-body">
+                <p class="video-card-title">${escapeHtml(report.title || report.slug)}</p>
+                <div class="video-card-meta">
+                  <span>${escapeHtml(formatDate(report.date))}</span>
+                  ${report.topic ? `<span>${escapeHtml(report.topic)}</span>` : ""}
+                </div>
+                <div class="video-card-labels">
+                  ${statusBadge(report.status)}
+                </div>
+              </div>
+            </div>
+            ${report.summary ? `<p class="summary">${escapeHtml(report.summary)}</p>` : ""}
+          </a>
+        </li>`;
   }
 
   function updateHeaderMeta(catalog) {
@@ -139,6 +263,7 @@
     if (reports.length === 0) {
       setDetailMode(false);
       root.innerHTML = `
+        ${viewNav("home")}
         ${hero}
         <div class="empty-archive empty-state">
           <h2>No reports yet</h2>
@@ -148,35 +273,11 @@
       return;
     }
 
-    const cards = sorted
-      .map((r) => {
-        const thumb = r.image
-          ? `<img class="video-card-thumb" src="${escapeHtml(r.image)}" alt="" loading="lazy" />`
-          : `<div class="video-card-thumb video-card-thumb-empty" aria-hidden="true"></div>`;
-        return `
-        <li>
-          <a class="video-card report-card" href="#/report/${encodeURIComponent(r.slug)}">
-            <div class="video-card-top">
-              <div class="video-card-thumb-wrap">${thumb}</div>
-              <div class="video-card-body">
-                <p class="video-card-title">${escapeHtml(r.title || r.slug)}</p>
-                <div class="video-card-meta">
-                  <span>${escapeHtml(formatDate(r.date))}</span>
-                  ${r.topic ? `<span>${escapeHtml(r.topic)}</span>` : ""}
-                </div>
-                <div class="video-card-labels">
-                  ${statusBadge(r.status)}
-                </div>
-              </div>
-            </div>
-            ${r.summary ? `<p class="summary">${escapeHtml(r.summary)}</p>` : ""}
-          </a>
-        </li>`;
-      })
-      .join("");
+    const cards = sorted.map((r) => reportCardHtml(r)).join("");
 
     setDetailMode(false);
     root.innerHTML = `
+      ${viewNav("home")}
       ${hero}
       <section class="home-section">
         <div class="section-heading">
@@ -209,6 +310,107 @@
       input.setSelectionRange(caret, caret);
       input.addEventListener("input", () => {
         renderCatalog(catalog, input.value);
+      });
+    }
+  }
+
+  function renderRecent(catalog, query) {
+    const reports = Array.isArray(catalog.reports) ? catalog.reports : [];
+    const win = recentWindow();
+    const windowed = reports.filter((r) => inRecentWindow(r.date, win));
+    const q = (query || "").trim().toLowerCase();
+    const filtered = q
+      ? windowed.filter((r) => {
+          const hay = [r.title, r.topic, r.summary, r.slug, bodyTextCache.get(r.slug) || ""]
+            .filter(Boolean)
+            .join(" ")
+            .toLowerCase();
+          return hay.includes(q);
+        })
+      : windowed;
+    const sorted = [...filtered].sort((a, b) =>
+      String(b.date || "").localeCompare(String(a.date || ""))
+    );
+
+    updateHeaderMeta(catalog);
+
+    const newest = newestReportDate(reports);
+    const age = newest ? daysBetween(newest, win.today) : null;
+    const ageNote =
+      age === 0 ? " (today)" : age > 0 ? ` (${age} day${age === 1 ? "" : "s"} before today)` : "";
+    const updated = catalog.generated ? formatDate(catalog.generated) : "—";
+    const newestLabel = newest ? `${formatDay(newest)}${ageNote}` : "none";
+
+    const hero = `
+      <section class="learning-hero" aria-labelledby="recent-title">
+        <div class="hero-topline">
+          <span class="eyebrow">Last 13 days</span>
+          <span class="hero-xp">${escapeHtml(formatDay(win.start))} – ${escapeHtml(formatDay(win.today))}</span>
+        </div>
+        <h2 id="recent-title">Recent reports</h2>
+        <p>Reports dated in the last 13 days, through today on this device.</p>
+        <p class="window-note">Newest report: <strong>${escapeHtml(newestLabel)}</strong>. Index regenerated <strong>${escapeHtml(updated)}</strong>.</p>
+        <div class="status-stats">
+          <div>
+            <strong>${windowed.length}</strong>
+            <span>In window</span>
+          </div>
+          <div>
+            <strong>${reports.length}</strong>
+            <span>All reports</span>
+          </div>
+          <div>
+            <strong>${age === null ? "—" : age}</strong>
+            <span>Days since newest</span>
+          </div>
+        </div>
+      </section>`;
+
+    const emptyWindow = `
+      <div class="empty-archive empty-state">
+        <h2>No reports in the last 13 days</h2>
+        <p>Nothing is dated from ${escapeHtml(formatDay(win.start))} through ${escapeHtml(formatDay(win.today))}.</p>
+        <p class="staleness">Newest report: ${escapeHtml(newestLabel)}. Index regenerated ${escapeHtml(updated)}.</p>
+      </div>`;
+
+    const list =
+      windowed.length === 0
+        ? emptyWindow
+        : sorted.length === 0
+          ? `<p class="no-results">No reports in this window match “${escapeHtml(query)}”.</p>`
+          : `<ul class="video-grid report-list">${sorted.map((r) => reportCardHtml(r)).join("")}</ul>`;
+
+    setDetailMode(false);
+    root.innerHTML = `
+      ${viewNav("recent")}
+      ${hero}
+      <section class="home-section">
+        <div class="section-heading">
+          <h2>In the last 13 days</h2>
+        </div>
+        <div class="search-row">
+          <input
+            type="search"
+            class="search-input"
+            id="recent-search"
+            placeholder="Search title, topic, summary, body…"
+            value="${escapeHtml(query || "")}"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <span class="filter-chip" id="result-count">${sorted.length} / ${windowed.length}</span>
+        </div>
+        ${list}
+      </section>
+    `;
+
+    const input = document.getElementById("recent-search");
+    if (input) {
+      input.focus({ preventScroll: true });
+      const caret = input.value.length;
+      input.setSelectionRange(caret, caret);
+      input.addEventListener("input", () => {
+        renderRecent(catalog, input.value);
       });
     }
   }
@@ -265,24 +467,47 @@
     `;
   }
 
-  async function showHome() {
+  async function showHome(seq) {
     setLoading("Loading archive…");
     try {
       const catalog = await loadCatalog();
+      if (seq !== routeSeq) return;
       renderCatalog(catalog, "");
     } catch (err) {
+      if (seq !== routeSeq) return;
       console.error(err);
       setError("Could not load data/index.json. Is the archive synced?");
       headerMeta.textContent = "";
     }
   }
 
-  async function showReport(slug) {
+  async function showRecent(seq) {
+    setLoading("Loading recent reports…");
+    try {
+      const catalog = await loadCatalog();
+      if (seq !== routeSeq) return;
+      const win = recentWindow();
+      const reports = Array.isArray(catalog.reports) ? catalog.reports : [];
+      const windowed = reports.filter((r) => inRecentWindow(r.date, win));
+      await Promise.all(windowed.map((r) => loadBodyText(r.slug)));
+      if (seq !== routeSeq) return;
+      renderRecent(catalog, "");
+    } catch (err) {
+      if (seq !== routeSeq) return;
+      console.error(err);
+      setError("Could not load data/index.json. Is the archive synced?");
+      headerMeta.textContent = "";
+    }
+  }
+
+  async function showReport(slug, seq) {
     setLoading("Loading report…");
     try {
       const report = await fetchJson(`data/reports/${encodeURIComponent(slug)}.json`);
+      if (seq !== routeSeq) return;
       renderReport(report);
     } catch (err) {
+      if (seq !== routeSeq) return;
       console.error(err);
       setError(`Report “${slug}” not found.`);
       headerMeta.textContent = "";
@@ -290,16 +515,21 @@
   }
 
   async function route() {
+    const seq = ++routeSeq;
     const r = parseRoute();
     document.title =
       r.name === "report"
         ? `${r.slug} · last30days Archive`
-        : "last30days Archive";
+        : r.name === "recent"
+          ? "Last 13 days · last30days Archive"
+          : "last30days Archive";
 
     if (r.name === "report") {
-      await showReport(r.slug);
+      await showReport(r.slug, seq);
+    } else if (r.name === "recent") {
+      await showRecent(seq);
     } else {
-      await showHome();
+      await showHome(seq);
     }
   }
 

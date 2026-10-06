@@ -211,6 +211,46 @@ a:hover { color: var(--teal-deep); }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.view-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0 0 0.85rem;
+}
+
+a.filter-chip {
+  text-decoration: none;
+  color: var(--text-dim);
+}
+
+a.filter-chip:hover {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--teal) 45%, var(--border));
+}
+
+a.filter-chip.is-active {
+  color: var(--teal-deep);
+  background: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--teal) 45%, var(--border));
+}
+
+.learning-hero p.window-note {
+  margin: 0.65rem 0 0;
+  max-width: none;
+  color: var(--text-mute);
+  font-size: 0.8rem;
+}
+
+.window-note strong {
+  color: var(--text-dim);
+  font-weight: 650;
+}
+
+.empty-state .staleness {
+  margin-top: 0.45rem;
 }
 
 .hero-xp {

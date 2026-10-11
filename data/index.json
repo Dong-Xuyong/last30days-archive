@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-11T22:31:38+01:00",
-  "reportCount": 20,
+  "generated": "2026-10-11T22:38:31+01:00",
+  "reportCount": 21,
   "reports": [
     {
       "slug": "men-s-autumn-outfits-2026",
@@ -17,6 +17,14 @@
       "date": "2026-10-11",
       "status": "full",
       "summary": "Supersedes the earlier provisional men-s-autumn-outfits-2026: now with YouTube. Waxed jackets, textured knits, cord/moleskin trousers, chukka boots, tweed."
+    },
+    {
+      "slug": "men-s-autumn-outfits-2026-v3",
+      "title": "Men's autumn outfits 2026 v3",
+      "topic": "men's outfits for autumn (outono) - what's trending in the last 30 days",
+      "date": "2026-10-11",
+      "status": "full",
+      "summary": "Supersedes v2 (men-s-autumn-outfits-2026-v2): now with web, TikTok, Instagram and Pinterest. Relaxed brown/indigo trousers, cream knits, chore/waxed jackets, henleys, flannels."
     },
     {
       "slug": "bilibili-transcript-extract",

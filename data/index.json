@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-11T22:23:50+01:00",
-  "reportCount": 19,
+  "generated": "2026-10-11T22:31:38+01:00",
+  "reportCount": 20,
   "reports": [
     {
       "slug": "men-s-autumn-outfits-2026",
@@ -9,6 +9,14 @@
       "date": "2026-10-11",
       "status": "provisional",
       "summary": "Reddit fall wishlist: flannels, workwear jackets, chunky knits and boots; thin evidence (Reddit only)."
+    },
+    {
+      "slug": "men-s-autumn-outfits-2026-v2",
+      "title": "Men's autumn outfits 2026 v2",
+      "topic": "men's outfits for autumn (outono) - what's trending in the last 30 days",
+      "date": "2026-10-11",
+      "status": "full",
+      "summary": "Supersedes the earlier provisional men-s-autumn-outfits-2026: now with YouTube. Waxed jackets, textured knits, cord/moleskin trousers, chukka boots, tweed."
     },
     {
       "slug": "bilibili-transcript-extract",

@@ -1,7 +1,15 @@
 {
-  "generated": "2026-10-11T22:38:31+01:00",
-  "reportCount": 21,
+  "generated": "2026-10-13T23:16:29+01:00",
+  "reportCount": 22,
   "reports": [
+    {
+      "slug": "getting-the-most-value-from-ai-tokens",
+      "title": "Getting the Most Value from AI Tokens",
+      "topic": "how to get the most value out of AI token usage",
+      "date": "2026-10-13",
+      "status": "full",
+      "summary": "Measure with /usage, route models, cache aggressively, trim context, and compare plans by API-equivalent value."
+    },
     {
       "slug": "men-s-autumn-outfits-2026",
       "title": "Men's autumn outfits 2026",

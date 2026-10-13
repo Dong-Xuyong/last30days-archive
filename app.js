@@ -527,10 +527,10 @@
     const r = parseRoute();
     document.title =
       r.name === "report"
-        ? `${r.slug} · last30days Archive`
+        ? `${r.slug} · Research Archive (last30days)`
         : r.name === "recent"
-          ? "Last 13 days · last30days Archive"
-          : "last30days Archive";
+          ? "Last 13 days · Research Archive (last30days)"
+          : "Research Archive (last30days)";
 
     if (r.name === "report") {
       await showReport(r.slug, seq);

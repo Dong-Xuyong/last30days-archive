@@ -16,5 +16,6 @@
   ],
   "footerHtml": "<p>✅ All agents reported back! ├─ 🟠 Reddit: 8 threads │ 127 upvotes │ 549 comments ├─ 🔴 YouTube: 3 videos │ 2,677,776 views │ 2/3 with transcripts ├─ 🟡 HN: 1 story │ 459 points │ 502 comments ├─ 🐙 GitHub: 2 items │ 5 reactions │ 14 comments ├─ 🌐 Web: 3 pages - youtube.com, euromillones.com ├─ 🗣️ Top voices: r/AskReddit, r/Eldoret, r/Opportunities_Kenya ├─ 🕒 Recent evidence is thin: only 4 of 17 dated items are from the last 7 days. └─ 📎 Raw results saved to ~/last30days/runs/20261014-103231-how-to-make-the-first-million-euros/report.md</p>",
   "badge": "🌐 last30days v3.26.0 · synced 2026-10-14",
-  "source_raw": "/home/box/last30days/runs/20261014-103231-how-to-make-the-first-million-euros/how-to-make-the-first-million-euros-raw.md"
+  "source_raw": "/home/box/last30days/runs/20261014-103231-how-to-make-the-first-million-euros/how-to-make-the-first-million-euros-raw.md",
+  "image": "data/infographics/how-to-make-the-first-million-euros.png"
 }

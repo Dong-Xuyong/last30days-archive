@@ -9,5 +9,6 @@
   "keyPatterns": [],
   "footerHtml": "<p>✅ All agents reported back! ├─ 🟠 Reddit: 13 threads │ 3,248 upvotes │ 1,011 comments ├─ 🔴 YouTube: 6 videos │ 787,748 views │ 5/6 with transcripts ├─ 🎵 TikTok: 23 videos │ 3,140,346 views │ 354,739 likes ├─ 📸 Instagram: 8 reels │ 110,883 views │ 8,024 likes ├─ 📌 Pinterest: 10 pins ├─ 🌐 Web: 9 pages - The Guardian, hockerty.com, zara.com, huckberry.com, apetogentleman.com, gq.com, reddit.com ├─ 🗣️ Top voices: r/malefashionadvice, r/mensfashion, r/frugalmalefashion ├─ 🕒 Recent evidence is thin: only 22 of 59 dated items are from the last 7 days. └─ 📎 Raw results saved to ~/last30days/runs/20261011-223650-men-s-fall-outfits/report.md</p>",
   "badge": "🌐 last30days v3.26.0 · synced 2026-10-11",
-  "source_raw": "/home/box/last30days/runs/20261011-223650-men-s-fall-outfits/men-s-fall-outfits-raw.md"
+  "source_raw": "/home/box/last30days/runs/20261011-223650-men-s-fall-outfits/men-s-fall-outfits-raw.md",
+  "image": "data/infographics/men-s-autumn-outfits-2026-v3.png"
 }

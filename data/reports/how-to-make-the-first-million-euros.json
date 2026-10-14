@@ -1,0 +1,20 @@
+{
+  "slug": "how-to-make-the-first-million-euros",
+  "title": "How to Make the First Million Euros",
+  "topic": "how to make the first million euros",
+  "date": "2026-10-14",
+  "status": "full",
+  "summary": "Community advice: index funds and matched retirement saving, ownership over salary, solve painful problems; evidence is US-framed and noisy.",
+  "synthesisHtml": "<p>🌐 last30days v3.26.0 · synced 2026-10-14</p>\n<p>What I learned:</p>\n<p><strong>The boring path is the one people actually describe.</strong> In r/AskReddit's \"How do you make your first million?\" (2026-10-12), the most concrete plan was maxing out employer-matched retirement contributions and buying low-fee S&amp;P 500 index funds. In the \"Millionaires of Reddit\" thread (2026-09-28, 177 comments), the top replies say it \"happened by 4pm market close\" inside retirement accounts, and then they went back to work.</p>\n<p><strong>Equity and ownership beat salary.</strong> The success stories that come up again and again are about owning something: taking stock options instead of a bonus, designing a product, or running an early e-commerce arbitrage. That last one comes with a warning: the commenter said dropshipping was \"a wild year\" in 2014 and is \"dead in 2026\". Dan Martell's video (787,789 views) gives the same advice for founders: find a painful problem people will pay to fix (\"a painkiller, not a vitamin\") and use AI to deliver it cheaply.</p>\n<p><strong>You don't always need capital, but commenters push back on that claim.</strong> Alex Hormozi's \"10 different ways to break down making $1 million\" says you can start with little or no money. His top comments push back: \"If you're broke, ain't no one lending you that kind of money.\"</p>\n<p><strong>Luck, starting point and leverage matter, and people say so openly.</strong> The top Reddit answers joke about being born in a rich country and a \"$998k loan from my parents\". The \"easy, actually\" video (796,792 views) points out that leveraged property counts toward net worth: buy a house for 500K, it rises to 1.5M, and net worth goes up by a million. It also warns that ultra-wealth is not the point.</p>\n<p><strong>Lots of noise, and almost nothing about Europe.</strong> Most of the evidence is US-framed (401k, dollars). The results also picked up off-topic items (a EuroMillions draw, an HN thread on product quality, a GitHub token-cost issue) and \"buy my course\" pitches. Nothing in this run covers euro-specific routes such as Portuguese or EU tax wrappers. Only 4 of 17 dated items are from the last 7 days.</p>",
+  "keyPatterns": [
+    "Index funds plus employer-matched retirement contributions is the most-cited boring path",
+    "Ownership (stock options, products, businesses) shows up in the real success stories",
+    "Solve a painful problem people will pay for; AI lowers the cost of delivery",
+    "Zero-money-down claims get pushback from commenters",
+    "Starting point and leverage (family money, mortgaged property) are openly acknowledged",
+    "Evidence is US-framed; no euro or EU-specific guidance in this run"
+  ],
+  "footerHtml": "<p>✅ All agents reported back! ├─ 🟠 Reddit: 8 threads │ 127 upvotes │ 549 comments ├─ 🔴 YouTube: 3 videos │ 2,677,776 views │ 2/3 with transcripts ├─ 🟡 HN: 1 story │ 459 points │ 502 comments ├─ 🐙 GitHub: 2 items │ 5 reactions │ 14 comments ├─ 🌐 Web: 3 pages - youtube.com, euromillones.com ├─ 🗣️ Top voices: r/AskReddit, r/Eldoret, r/Opportunities_Kenya ├─ 🕒 Recent evidence is thin: only 4 of 17 dated items are from the last 7 days. └─ 📎 Raw results saved to ~/last30days/runs/20261014-103231-how-to-make-the-first-million-euros/report.md</p>",
+  "badge": "🌐 last30days v3.26.0 · synced 2026-10-14",
+  "source_raw": "/home/box/last30days/runs/20261014-103231-how-to-make-the-first-million-euros/how-to-make-the-first-million-euros-raw.md"
+}

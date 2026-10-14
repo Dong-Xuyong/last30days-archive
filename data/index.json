@@ -1,7 +1,15 @@
 {
-  "generated": "2026-10-13T23:16:29+01:00",
-  "reportCount": 22,
+  "generated": "2026-10-14T10:33:37+01:00",
+  "reportCount": 23,
   "reports": [
+    {
+      "slug": "how-to-make-the-first-million-euros",
+      "title": "How to Make the First Million Euros",
+      "topic": "how to make the first million euros",
+      "date": "2026-10-14",
+      "status": "full",
+      "summary": "Community advice: index funds and matched retirement saving, ownership over salary, solve painful problems; evidence is US-framed and noisy."
+    },
     {
       "slug": "getting-the-most-value-from-ai-tokens",
       "title": "Getting the Most Value from AI Tokens",

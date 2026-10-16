@@ -12,31 +12,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <script src="dong-ui/theme.js"></script>
   <link rel="stylesheet" href="dong-ui/theme.css?v=4" />
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="/ui/shell.css?v=1" />
+  <link rel="stylesheet" href="styles.css?v=7" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◈</text></svg>" />
 </head>
-<body>
+<body class="dx">
   <a class="skip-link" href="#view-root">Skip to content</a>
   <div id="app">
-    <header id="topbar">
-      <a href="#/" class="brand" id="brand-link">
-        <span class="brand-mark" aria-hidden="true">◈</span>
-        <h1 id="topbar-title">Research Archive (last30days)</h1>
+    <header class="dx-header" id="topbar">
+      <a class="dx-home" href="/" aria-label="Home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
       </a>
-      <div class="header-meta" id="header-meta"></div>
-      <a class="dong-home-link" href="https://dong-xuyong.github.io/" aria-label="Back to all apps" title="All apps"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg></a>
-      <button type="button" data-dong-theme-toggle aria-label="Toggle color theme"></button>
+      <h1 class="dx-title" id="topbar-title">Research Archive (last30days)</h1>
+      <div class="dx-actions">
+        <div class="header-meta dx-muted" id="header-meta"></div>
+        <button type="button" data-dong-theme-toggle aria-label="Toggle color theme"></button>
+      </div>
     </header>
 
     <main id="view-root" tabindex="-1">
-      <div id="loading" class="state-panel">Loading archive&hellip;</div>
+      <div id="loading" class="state-panel dx-card">Loading archive&hellip;</div>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer dx-card">
       <span>Synced from last30days skill reports</span>
       <a href="https://dong-xuyong.github.io/last30days-archive/">dong-xuyong.github.io/last30days-archive</a>
     </footer>
   </div>
-  <script src="app.js?v=7"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>

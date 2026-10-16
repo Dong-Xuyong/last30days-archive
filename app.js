@@ -62,12 +62,12 @@
 
   function setLoading(msg) {
     setDetailMode(false);
-    root.innerHTML = `<div class="state-panel">${escapeHtml(msg || "Loading…")}</div>`;
+    root.innerHTML = `<div class="state-panel dx-card">${escapeHtml(msg || "Loading…")}</div>`;
   }
 
   function setError(msg) {
     setDetailMode(false);
-    root.innerHTML = `<div class="state-panel error">${escapeHtml(msg)}</div>`;
+    root.innerHTML = `<div class="state-panel error dx-card">${escapeHtml(msg)}</div>`;
   }
 
   function statusBadge(status) {
@@ -118,7 +118,7 @@
       : `<div class="video-card-thumb video-card-thumb-empty" aria-hidden="true"></div>`;
     return `
         <li>
-          <a class="video-card report-card" href="#/report/${encodeURIComponent(report.slug)}">
+          <a class="video-card report-card dx-card" href="#/report/${encodeURIComponent(report.slug)}">
             <div class="video-card-top">
               <div class="video-card-thumb-wrap">${thumb}</div>
               <div class="video-card-body">
@@ -171,7 +171,7 @@
     const updated = catalog.generated ? formatDate(catalog.generated) : "—";
 
     const hero = `
-      <section class="learning-hero" aria-labelledby="learning-title">
+      <section class="learning-hero dx-card" aria-labelledby="learning-title">
         <div class="hero-topline">
           <span class="eyebrow">Last 30 days</span>
           <span class="hero-xp">Updated ${escapeHtml(updated)}</span>
@@ -198,7 +198,7 @@
       setDetailMode(false);
       root.innerHTML = `
         ${hero}
-        <div class="empty-archive empty-state">
+        <div class="empty-archive empty-state dx-card">
           <h2>No reports yet</h2>
           <p>Run <code>python scripts/sync_last30days_archive.py</code> to populate this archive.</p>
         </div>
@@ -211,7 +211,7 @@
     setDetailMode(false);
     root.innerHTML = `
       ${hero}
-      <section class="home-section">
+      <section class="home-section dx-card">
         <div class="section-heading">
           <h2>All reports</h2>
         </div>
@@ -229,7 +229,7 @@
         </div>
         ${
           sorted.length === 0
-            ? `<p class="no-results">No reports match “${escapeHtml(query)}”.</p>`
+            ? `<p class="no-results dx-card">No reports match “${escapeHtml(query)}”.</p>`
             : `<ul class="video-grid report-list">${cards}</ul>`
         }
       </section>
@@ -269,8 +269,8 @@
 
     setDetailMode(true);
     root.innerHTML = `
-      <a class="back-link" href="#/">← All reports</a>
-      <article class="report-view">
+      <article class="report-view dx-card">
+        <a class="back-link" href="#/">← All reports</a>
         <header class="report-hero">
           ${img}
           <div class="report-kicker">

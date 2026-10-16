@@ -9,5 +9,6 @@
   "keyPatterns": [],
   "footerHtml": "<p>✅ All agents reported back! ├─ 🟠 Reddit: 16 threads │ 1,693 upvotes │ 347 comments ├─ 🔴 YouTube: 2 videos │ 6,288,827 views │ 2/2 with transcripts ├─ 🟡 HN: 16 storys │ 672 points │ 551 comments ├─ 💼 Jobs: 5 roles ├─ 🌐 Web: 16 pages - geotoolbox.ai, shareallai.github.io, felloai.com, Engadget, stocktwits.com, thenewstack.io, forum.cursor.com, cursor.com ├─ 🗣️ Top voices: r/GrokAiDiscussion, r/GameDealsMeta, r/Asphalt8 └─ 📎 Raw results saved to ~/last30days/runs/20261016-173522-legacy-ultra-vs-x-subscription-ultra/report.md</p>",
   "badge": "🌐 last30days v3.26.0 · synced 2026-10-16",
-  "source_raw": "/home/box/last30days/runs/20261016-173522-legacy-ultra-vs-x-subscription-ultra/legacy-ultra-raw.md"
+  "source_raw": "/home/box/last30days/runs/20261016-173522-legacy-ultra-vs-x-subscription-ultra/legacy-ultra-raw.md",
+  "image": "data/infographics/legacy-ultra-vs-x-subscription-ultra.png"
 }

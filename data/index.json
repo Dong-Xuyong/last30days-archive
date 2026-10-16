@@ -1,7 +1,15 @@
 {
-  "generated": "2026-10-14T10:33:37+01:00",
-  "reportCount": 23,
+  "generated": "2026-10-16T17:37:21+01:00",
+  "reportCount": 24,
   "reports": [
+    {
+      "slug": "legacy-ultra-vs-x-subscription-ultra",
+      "title": "Legacy Ultra vs X Subscription Ultra",
+      "topic": "Legacy Ultra vs X Subscription Ultra",
+      "date": "2026-10-16",
+      "status": "full",
+      "summary": "New $200 X Subscription Ultra trades legacy Cursor Ultra's Claude/GPT allowance for a weekly shared Grok pool; switching is one-way."
+    },
     {
       "slug": "how-to-make-the-first-million-euros",
       "title": "How to Make the First Million Euros",

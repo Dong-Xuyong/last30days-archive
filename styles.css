@@ -1,23 +1,18 @@
-/* last30days archive — colors and type follow the shared shell tokens.
-   --dx-text / --dx-accent are aliases for shells that publish those names;
-   the live kit uses --dx-fg and --dx-primary. */
+/* last30days archive — card, type, and colour follow the shared shell tokens. */
 
 :root {
-  --dx-text: var(--dx-fg, #0d0b08);
-  --dx-accent: var(--dx-primary, #1d4ed8);
-
   --bg: transparent;
   --bg-soft: var(--dx-card-solid, #ffffff);
   --bg-raised: var(--dx-card, rgb(255 255 255 / 0.94));
   --border: var(--dx-border, hsl(44 14% 80%));
-  --text: var(--dx-text);
+  --text: var(--dx-text, #0d0b08);
   --text-dim: var(--dx-muted, #5c574f);
   --text-mute: var(--dx-muted, #5c574f);
-  --teal: var(--dx-accent);
-  --teal-deep: var(--dx-accent);
-  --teal-glow: var(--dx-primary-soft, hsl(224 76% 48% / 0.12));
-  --accent: var(--dx-accent);
-  --accent-soft: var(--dx-primary-soft, hsl(224 76% 48% / 0.12));
+  --teal: var(--dx-accent, #1d4ed8);
+  --teal-deep: var(--dx-accent, #1d4ed8);
+  --teal-glow: var(--dx-accent-soft, hsl(224 76% 48% / 0.12));
+  --accent: var(--dx-accent, #1d4ed8);
+  --accent-soft: var(--dx-accent-soft, hsl(224 76% 48% / 0.12));
   --amber: #7a5200;
   --amber-soft: rgba(122, 82, 0, 0.14);
   --danger-soft: #8f2f24;
@@ -32,8 +27,18 @@
 }
 
 html.dark {
-  --dx-text: var(--dx-fg, #efeeec);
-  --dx-accent: var(--dx-primary, #60a5fa);
+  --bg-soft: var(--dx-card-solid, #1f1f1f);
+  --bg-raised: var(--dx-card, rgb(31 31 31 / 0.94));
+  --border: var(--dx-border, hsl(0 0% 26%));
+  --text: var(--dx-text, #efeeec);
+  --text-dim: var(--dx-muted, #b8b8b8);
+  --text-mute: var(--dx-muted, #b8b8b8);
+  --teal: var(--dx-accent, #60a5fa);
+  --teal-deep: var(--dx-accent, #60a5fa);
+  --teal-glow: var(--dx-accent-soft, hsl(213 94% 68% / 0.16));
+  --accent: var(--dx-accent, #60a5fa);
+  --accent-soft: var(--dx-accent-soft, hsl(213 94% 68% / 0.16));
+  --shadow: var(--dx-shadow, 0 8px 24px hsl(0 0% 0% / 0.35));
   --amber: #e6c48a;
   --amber-soft: rgba(230, 196, 138, 0.18);
   --danger-soft: #f0b2a6;
@@ -63,7 +68,7 @@ html,
 body {
   margin: 0;
   min-height: 100%;
-  color: var(--dx-text);
+  color: var(--dx-text, #0d0b08);
   font-family: var(--dx-font, var(--font));
   -webkit-font-smoothing: antialiased;
 }
@@ -85,7 +90,7 @@ body { padding-bottom: env(safe-area-inset-bottom); }
   z-index: 100;
   transform: translateY(-160%);
   border-radius: var(--dx-radius-sm, 10px);
-  background: var(--dx-fg, #0d0b08);
+  background: var(--dx-text, #0d0b08);
   color: var(--dx-bg, #f6f4ef);
   padding: 0.65rem 0.85rem;
   font-weight: 700;
@@ -674,7 +679,7 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 [tabindex="0"]:focus-visible {
-  outline: 2px solid var(--dx-ring, var(--dx-accent));
+  outline: 2px solid var(--dx-accent, #1d4ed8);
   outline-offset: 2px;
 }
 

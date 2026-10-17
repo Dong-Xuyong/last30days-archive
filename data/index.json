@@ -1,6 +1,6 @@
 {
   "generated": "2026-10-16T17:37:21+01:00",
-  "reportCount": 24,
+  "reportCount": 23,
   "reports": [
     {
       "slug": "legacy-ultra-vs-x-subscription-ultra",
@@ -70,15 +70,6 @@
       "status": "full",
       "summary": "Communities say token bills are almost all reread context, not generated code. The harness startup tax times turn count sets the price more than the model, and the fastest cuts are compressing tool dumps, skipping agent loops on known files, and keeping a cache-stable prefix.",
       "image": "assets/how-to-optimize-the-token-usage.png"
-    },
-    {
-      "slug": "aima-missed-first-appointment-pending-residence-title",
-      "title": "AIMA missed summons, still pending",
-      "topic": "what should I do still pending and missing the first call for the new title of residence for almost a year",
-      "date": "2026-09-01",
-      "status": "full",
-      "summary": "People waiting on AIMA after a missed first summons say do not email daily. Use the contact form, then geral@aima.gov.pt once. Check spam for @aima.gov.pt and give employers the QR comprovativo while the file stays under review.",
-      "image": "assets/aima-missed-first-appointment-pending-residence-title.png"
     },
     {
       "slug": "apps-to-install-before-going-to-china",
